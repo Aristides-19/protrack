@@ -1,7 +1,9 @@
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <p className="text-6xl font-bold text-white">Protrack</p>
     </>
   );
 };
+
+export default Home;

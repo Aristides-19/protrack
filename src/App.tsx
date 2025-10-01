@@ -1,5 +1,5 @@
+import { Error, Home, Layout } from "@routes";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Error, Home, Layout } from "./routes";
 
 export const App = () => {
   return (
