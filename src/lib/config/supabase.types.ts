@@ -66,32 +66,35 @@ export type Database = {
       users: {
         Row: {
           created_at: string
+          email: string
           id: string
           is_deleted: boolean
           name: string
-          role: string
+          role_id: string
           updated_at: string
         }
         Insert: {
           created_at?: string
+          email: string
           id?: string
           is_deleted?: boolean
           name: string
-          role: string
+          role_id?: string
           updated_at: string
         }
         Update: {
           created_at?: string
+          email?: string
           id?: string
           is_deleted?: boolean
           name?: string
-          role?: string
+          role_id?: string
           updated_at?: string
         }
         Relationships: [
           {
             foreignKeyName: "users_role_fkey"
-            columns: ["role"]
+            columns: ["role_id"]
             isOneToOne: false
             referencedRelation: "roles"
             referencedColumns: ["id"]
