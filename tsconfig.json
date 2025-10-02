@@ -28,7 +28,8 @@
     "paths": {
       "@lib": ["src/lib"],
       "@components": ["src/components"],
-      "@routes": ["src/routes"]
+      "@routes": ["src/routes"],
+      "@lib/config": ["src/lib/config"]
     }
   },
   "include": ["src"]
