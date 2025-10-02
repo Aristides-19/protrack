@@ -18,7 +18,7 @@ const Button = ({ variant = "base", size = "md", ...props }: Props) => {
 };
 
 type Props = React.ComponentPropsWithoutRef<"button"> & {
-  variant?: Variant | "ghost" | "link";
+  variant?: Variant | "ghost" | "link" | "base";
   size?: Size;
 };
 

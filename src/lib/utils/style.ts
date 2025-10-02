@@ -5,7 +5,6 @@ export const cn = (...inputs: ClassValue[]) => twMerge(clsx(...inputs));
 
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 export type Variant =
-  | "base"
   | "neutral"
   | "primary"
   | "secondary"
