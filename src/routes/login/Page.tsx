@@ -1,7 +1,10 @@
 import { Input, Widget } from "@components";
-import { LoginMutation, Rule } from "@lib";
+import { AppContext, LoginMutation, Rule } from "@lib";
+import React from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { FaKey, FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { control, handleSubmit } = useForm<FormValues>({
@@ -9,6 +12,17 @@ const Login = () => {
     mode: "all",
   });
   const login = LoginMutation.useLogin();
+  const { user } = AppContext.useApp();
+  const navigate = useNavigate();
+
+  // TODO - Move to a protected route component
+  React.useEffect(() => {
+    if (user) navigate("/dashboard", { replace: true });
+  }, [user]);
+
+  React.useEffect(() => {
+    if (login.error) toast.error(login.error.message);
+  }, [login.error]);
 
   const onSubmit: SubmitHandler<FormValues> = data => login.mutate(data);
 
