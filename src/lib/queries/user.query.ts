@@ -20,7 +20,7 @@ const queryFn = async ({ id }: Input) => {
   return { id: data.id, email: data.email, name: data.name, role: data.roles.name } as Model.User;
 };
 
-export const use = (input: Input) =>
+export const useUser = (input: Input) =>
   useQuery<Data, ErrorT, Data, ReturnType<typeof Key>>(
     {
       queryKey: Key(input),

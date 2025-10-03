@@ -8,7 +8,7 @@ type AppContext = {
 
 const AppContext = React.createContext<AppContext>({});
 
-export const AppProvider = ({ children }: { children: React.ReactNode }) => {
+export const Provider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = React.useState<AppContext["user"]>();
 
   React.useEffect(() => {
@@ -26,4 +26,4 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   return <AppContext.Provider value={{ user }}>{children}</AppContext.Provider>;
 };
 
-export const useAppContext = () => React.useContext(AppContext);
+export const useApp = () => React.useContext(AppContext);

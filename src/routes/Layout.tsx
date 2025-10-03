@@ -1,4 +1,4 @@
-import { AppProvider } from "@lib";
+import { AppContext } from "@lib";
 import { Tanstack } from "@lib/config";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Outlet } from "react-router";
@@ -6,11 +6,11 @@ import { Outlet } from "react-router";
 const Layout = () => {
   return (
     <QueryClientProvider client={Tanstack.client}>
-      <AppProvider>
+      <AppContext.Provider>
         <main className="flex h-screen w-screen items-center justify-center bg-base-100">
           <Outlet />
         </main>
-      </AppProvider>
+      </AppContext.Provider>
     </QueryClientProvider>
   );
 };

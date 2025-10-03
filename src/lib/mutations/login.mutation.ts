@@ -22,7 +22,7 @@ const mutationFn = async (input: Input): Promise<Data> => {
   return { id: data.user.id, email: data.user.email! };
 };
 
-export const make = () =>
+export const useLogin = () =>
   useMutation<Data, ErrorT, Input>(
     {
       mutationFn,
