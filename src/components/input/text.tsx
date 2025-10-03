@@ -37,7 +37,7 @@ const Text = <TFieldValues extends FieldValues>({
         {right && <span className="shrink-0">{right}</span>}
       </label>
       <span className="text-base-content/60 flex items-center gap-2 px-1 text-[0.6875rem]">
-        {fieldState.error && <span className="status status-error shadow-none"></span>}
+        {fieldState.error && <span className="status status-error shadow-none bg-none"></span>}
         {fieldState.error && fieldState.error.message}
       </span>
     </div>
